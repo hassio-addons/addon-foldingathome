@@ -7,9 +7,9 @@ variables:
   ADDON_TARGET: "foldingathome"
   ADDON_LEGACY_TAGS: "true"
 
+  ADDON_AARCH64: "false"
   ADDON_ARMHF: "false"
+  ADDON_ARMV7: "false"
   ADDON_I386: "false"
 
-  ADDON_AARCH64_BASE: "hassioaddons/ubuntu-base-aarch64:5.0.1"
-  ADDON_AMD64_BASE: "hassioaddons/ubuntu-base-amd64:5.0.1"
-  ADDON_ARMV7_BASE: "hassioaddons/ubuntu-base-armv7:5.0.1"
+  ADDON_AMD64_BASE: "hassioaddons/debian-base-amd64:3.0.1"
