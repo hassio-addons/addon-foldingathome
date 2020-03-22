@@ -1,0 +1,23 @@
+#!/usr/bin/with-contenv bashio
+# shellcheck disable=SC2191
+# ==============================================================================
+# Home Assistant Community Add-on: Folding@home
+# Runs the FAHClient
+# ==============================================================================
+declare -a options
+
+bashio::log.info 'Starting Folding@home...'
+
+options+=(--http-addresses 0.0.0.0:7396)
+options+=(--command-address 0.0.0.0)
+options+=(--command-port 36330)
+options+=(--command-allow-no-pass 0/0)
+options+=(--allow 0/0)
+options+=(--web-allow 0/0)
+options+=(--smp=true)
+options+=(--user "Anonymous")
+options+=(--team 247478)
+options+=(--power full)
+
+cd /data || bashio::exit.nok "Failed to change to working directory"
+exec FAHClient "${options[@]}"

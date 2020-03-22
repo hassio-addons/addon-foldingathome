@@ -1,0 +1,15 @@
+---
+include: https://raw.githubusercontent.com/hassio-addons/organization/master/gitlabci/addon.yml
+
+variables:
+  ADDON_GITHUB_REPO: "hassio-addons/addon-foldingathome"
+  ADDON_SLUG: "foldingathome"
+  ADDON_TARGET: "foldingathome"
+  ADDON_LEGACY_TAGS: "true"
+
+  ADDON_ARMHF: "false"
+  ADDON_I386: "false"
+
+  ADDON_AARCH64_BASE: "hassioaddons/ubuntu-base-aarch64:5.0.1"
+  ADDON_AMD64_BASE: "hassioaddons/ubuntu-base-amd64:5.0.1"
+  ADDON_ARMV7_BASE: "hassioaddons/ubuntu-base-armv7:5.0.1"
