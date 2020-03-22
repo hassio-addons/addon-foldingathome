@@ -17,10 +17,6 @@
 [![Discord][discord-shield]][discord]
 [![Community Forum][forum-shield]][forum]
 
-[![Sponsor Frenck via GitHub Sponsors][github-sponsors-shield]][github-sponsors]
-
-[![Support Frenck on Patreon][patreon-shield]][patreon]
-
 Fighting disease with a world wide distributed super computer.
 
 ![Folding@home in the Home Assistant Frontend](images/screenshot.png)
