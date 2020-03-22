@@ -48,10 +48,10 @@ The installation of this add-on is pretty straightforward and not different in
 comparison to installing any other Home Assistant add-on.
 
 1. Search for the "Folding@home" add-on in the add-on store.
-2. Install the "Folding@home" add-on.
-3. Start the "Folding@home" add-on.
-4. Check the logs of the "Folding@home" to see if everything went well.
-5. Open the Web UI.
+1. Install the "Folding@home" add-on.
+1. Start the "Folding@home" add-on.
+1. Check the logs of the "Folding@home" to see if everything went well.
+1. Open the Web UI.
 
 **Note**: By default, the add-on joins the Home Assistant team (id: 247478).
 
