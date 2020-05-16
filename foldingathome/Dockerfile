@@ -37,17 +37,19 @@ ARG BUILD_VERSION
 # Labels
 LABEL \
     io.hass.name="Folding@home" \
-    io.hass.description="Fighting disease with a world wide distributed super computer." \
+    io.hass.description="Fighting disease with a world wide distributed super computer" \
     io.hass.arch="${BUILD_ARCH}" \
     io.hass.type="addon" \
     io.hass.version=${BUILD_VERSION} \
     maintainer="Franck Nijhof <frenck@addons.community>" \
-    org.label-schema.description="Fighting disease with a world wide distributed super computer." \
-    org.label-schema.build-date=${BUILD_DATE} \
-    org.label-schema.name="Folding@home" \
-    org.label-schema.schema-version="1.0" \
-    org.label-schema.url="https://community.home-assistant.io/t/home-assistant-community-add-on-folding-home/180496?u=frenck" \
-    org.label-schema.usage="https://github.com/hassio-addons/addon-foldingathome/tree/master/README.md" \
-    org.label-schema.vcs-ref=${BUILD_REF} \
-    org.label-schema.vcs-url="https://github.com/hassio-addons/addon-foldingathome" \
-    org.label-schema.vendor="Home Assistant Community Add-ons"
+    org.opencontainers.image.title="Folding@home" \
+    org.opencontainers.image.description="Fighting disease with a world wide distributed super computer" \
+    org.opencontainers.image.vendor="Home Assistant Community Add-ons" \
+    org.opencontainers.image.authors="Franck Nijhof <frenck@addons.community>" \
+    org.opencontainers.image.licenses="MIT" \
+    org.opencontainers.image.url="https://addons.community" \
+    org.opencontainers.image.source="https://github.com/hassio-addons/addon-foldingathome" \
+    org.opencontainers.image.documentation="https://github.com/hassio-addons/addon-foldingathome/blob/master/README.md" \
+    org.opencontainers.image.created=${BUILD_DATE} \
+    org.opencontainers.image.revision=${BUILD_REF} \
+    org.opencontainers.image.version=${BUILD_VERSION}
