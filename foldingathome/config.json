@@ -5,13 +5,9 @@
   "description": "Fighting disease with a world wide distributed super computer",
   "url": "https://github.com/hassio-addons/addon-foldingathome",
   "webui": "http://[HOST]:[PORT:7396]",
-  "startup": "application",
   "arch": ["amd64"],
-  "boot": "auto",
   "init": false,
   "hassio_api": true,
-  "hassio_role": "default",
-  "options": {},
   "video": true,
   "ports": {
     "7396/tcp": 7396,
