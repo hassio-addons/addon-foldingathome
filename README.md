@@ -10,7 +10,7 @@
 ![Supports armv7 Architecture][armv7-shield]
 ![Supports i386 Architecture][i386-shield]
 
-[![GitLab CI][gitlabci-shield]][gitlabci]
+[![Github Actions][github-actions-shield]][github-actions]
 ![Project Maintenance][maintenance-shield]
 [![GitHub Activity][commits-shield]][commits]
 
@@ -83,7 +83,7 @@ our [GitHub Repository][repository].
 
 MIT License
 
-Copyright (c) 2020 Franck Nijhof
+Copyright (c) 2020-2021 Franck Nijhof
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -117,16 +117,12 @@ SOFTWARE.
 [forum-shield]: https://img.shields.io/badge/community-forum-brightgreen.svg
 [forum]: https://community.home-assistant.io/t/home-assistant-community-add-on-folding-home/180496?u=frenck
 [frenck]: https://github.com/frenck
-[github-sponsors-shield]: https://frenck.dev/wp-content/uploads/2019/12/github_sponsor.png
-[github-sponsors]: https://github.com/sponsors/frenck
-[gitlabci-shield]: https://gitlab.com/hassio-addons/addon-foldingathome/badges/master/pipeline.svg
-[gitlabci]: https://gitlab.com/hassio-addons/addon-foldingathome/pipelines
+[github-actions-shield]: https://github.com/hassio-addons/addon-foldingathome/workflows/CI/badge.svg
+[github-actions]: https://github.com/hassio-addons/addon-foldingathome/actions
 [i386-shield]: https://img.shields.io/badge/i386-no-red.svg
 [issue]: https://github.com/hassio-addons/addon-foldingathome/issues
 [license-shield]: https://img.shields.io/github/license/hassio-addons/addon-foldingathome.svg
-[maintenance-shield]: https://img.shields.io/maintenance/yes/2020.svg
-[patreon-shield]: https://frenck.dev/wp-content/uploads/2019/12/patreon.png
-[patreon]: https://www.patreon.com/frenck
+[maintenance-shield]: https://img.shields.io/maintenance/yes/2021.svg
 [project-stage-shield]: https://img.shields.io/badge/project%20stage-experimental-yellow.svg
 [reddit]: https://reddit.com/r/homeassistant
 [releases-shield]: https://img.shields.io/github/release/hassio-addons/addon-foldingathome.svg
