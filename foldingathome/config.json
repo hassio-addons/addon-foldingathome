@@ -16,8 +16,5 @@
   "ports_description": {
     "7396/tcp": "Web interface",
     "36330/tcp": "Remote command interface"
-  },
-  "schema": {
-    "log_level": "list(trace|debug|info|notice|warning|error|fatal)?"
   }
 }
