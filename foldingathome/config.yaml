@@ -7,6 +7,7 @@ url: https://github.com/hassio-addons/addon-foldingathome
 webui: http://[HOST]:[PORT:7396]
 arch:
   - amd64
+  - aarch64
 init: false
 hassio_api: true
 video: true

@@ -1,4 +1,4 @@
-ARG BUILD_FROM=ghcr.io/hassio-addons/debian-base/amd64:5.2.2
+ARG BUILD_FROM=ghcr.io/hassio-addons/debian-base/amd64:5.2.3
 # hadolint ignore=DL3006
 FROM ${BUILD_FROM}
 
@@ -7,9 +7,17 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 # Setup base system
 ARG BUILD_ARCH=amd64
+ARG FAH_VERSION=7.6.21
+ARG FAH_VERSION_MAJOR=v7.6
+ARG FAH_CLIENT_BITS=64bit
+ARG FAH_DEB_ARCH=amd64
+
 RUN \
-    curl -J -L -o /tmp/fah.deb \
-        "https://download.foldingathome.org/releases/public/release/fahclient/debian-stable-64bit/v7.6/fahclient_7.6.21_amd64.deb" \
+    if [ ${BUILD_ARCH} == "aarch64" ];then FAH_DEB_ARCH=arm64;FAH_CLIENT_BITS=arm64;fi \
+    && DEB="https://download.foldingathome.org/releases/public/release/fahclient/debian-stable-${FAH_CLIENT_BITS}/${FAH_VERSION_MAJOR}/fahclient_${FAH_VERSION}_${FAH_DEB_ARCH}.deb" \
+    && echo ${DEB} \
+    && curl -J -L -o /tmp/fah.deb \
+        "${DEB}" \
     \
     && apt-get update \
     && apt-get install -y --no-install-recommends \
