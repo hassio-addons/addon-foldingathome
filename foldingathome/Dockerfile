@@ -1,4 +1,4 @@
-ARG BUILD_FROM=ghcr.io/hassio-addons/debian-base:6.2.7
+ARG BUILD_FROM=ghcr.io/hassio-addons/debian-base:7.1.0
 # hadolint ignore=DL3006
 FROM ${BUILD_FROM}
 
@@ -13,8 +13,8 @@ RUN \
     \
     && apt-get update \
     && apt-get install -y --no-install-recommends \
-        bzip2=1.0.8-4 \
-        ocl-icd-libopencl1=2.2.14-2 \
+        bzip2=1.0.8-5+b1 \
+        ocl-icd-libopencl1=2.3.1-1 \
     \
     && mkdir /etc/fahclient \
     && touch /etc/fahclient/config.xml \
