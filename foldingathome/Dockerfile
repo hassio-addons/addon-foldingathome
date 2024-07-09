@@ -9,13 +9,14 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 ARG BUILD_ARCH=amd64
 RUN \
     curl -J -L -o /tmp/fah.deb \
-        "https://download.foldingathome.org/releases/public/release/fahclient/debian-stable-64bit/v7.6/fahclient_7.6.21_amd64.deb" \
+        "https://download.foldingathome.org/releases/public/fah-client/debian-10-64bit/release/fah-client_8.3.17_amd64.deb" \
     \
     && apt-get update \
     && apt-get install -y --no-install-recommends \
         bzip2=1.0.8-5+b1 \
         ocl-icd-libopencl1=2.3.1-1 \
     \
+    && addgroup --system render \
     && mkdir /etc/fahclient \
     && touch /etc/fahclient/config.xml \
     && dpkg --install /tmp/fah.deb \
