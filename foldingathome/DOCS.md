@@ -28,9 +28,11 @@ comparison to installing any other Home Assistant add-on.
 1. Click the "Install" button to install the add-on.
 1. Start the "Folding@home" add-on.
 1. Check the logs of the "Folding@home" to see if everything went well.
-1. Open the Web UI.
 
-**Note**: By default, the add-on joins the Home Assistant team (id: 247478).
+That is all that is needed. The add-on starts folding on its own.
+
+**Note**: By default, the add-on folds anonymously for the Home Assistant team
+(id: 247478).
 
 Team stats: <https://stats.foldingathome.org/team/247478>
 
@@ -98,17 +100,24 @@ The name this machine is shown under in the Web Control. Defaults to
 
 ## Controlling the client
 
-The Folding@home v8 client has no built-in web interface of its own. Opening
-the add-on's Web UI redirects to the hosted Web Control, which is where the
-client is monitored and controlled.
+The Folding@home v8 client has no web interface of its own, so this add-on has
+no Web UI button. Monitoring and control happen in the hosted Web Control at
+<https://app.foldingathome.org>.
 
-The Web Control can only reach this machine once it has been linked to a
-Folding@home account, so set `account_token` if you want to watch progress,
-change the cause you support, or pause folding from your browser.
+To see this machine there, set an `account_token`. The client then keeps an
+outbound connection to your Folding@home account, and the Web Control reaches
+it through that. From there you can watch progress, pick a cause, or pause
+folding.
 
-The add-on tells the client to start folding every time it starts, so it folds
-on its own without any of that. Note that this also means pausing from the Web
-Control does not survive an add-on restart.
+None of that is required to contribute. The add-on tells the client to start
+folding every time it starts, so it folds whether or not an account is linked.
+Note that this also means pausing from the Web Control does not survive an
+add-on restart.
+
+Port `7396` is the client's own API. It is not published by default, because
+account-linked control does not go through it and it has no authentication in
+front of it. Map it under the add-on's Network settings only if you intend to
+point a Web Control at this machine directly.
 
 Previous versions of this documentation described embedding the old local Web
 Control with the `panel_iframe` integration. That interface no longer exists in
@@ -117,9 +126,9 @@ the v8 client, so that is no longer possible.
 ## Known issues and limitations
 
 - This add-on only runs on 64-bits intel-based computers.
-- The Folding@home v8 client ships no local web interface. Monitoring and
-  controlling it from a browser requires linking an account, see
-  `account_token` above.
+- The Folding@home v8 client ships no local web interface, so the add-on has no
+  Web UI. Monitoring and controlling it from a browser requires linking an
+  account, see `account_token` above.
 
 ## Changelog & Releases
 
