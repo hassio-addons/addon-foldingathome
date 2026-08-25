@@ -5,6 +5,14 @@
   "labels": ["dependencies", "no-stale"],
   "commitMessagePrefix": "⬆️",
   "commitMessageTopic": "{{depName}}",
+  "customDatasources": {
+    "fah-client": {
+      "defaultRegistryUrlTemplate": "https://download.foldingathome.org/releases/public/fah-client/meta.json",
+      "transformTemplates": [
+        "{ \"releases\": [ $[worker = \"debian-10-64bit\" and mode = \"release\" and $contains(package, \"_amd64.deb\")].{ \"version\": $join($map(version, function($v) { $string($v) }), \".\") } ] }"
+      ]
+    }
+  },
   "customManagers": [
     {
       "customType": "regex",
@@ -26,13 +34,22 @@
       "versioningTemplate": "deb",
       "datasourceTemplate": "deb",
       "depNameTemplate": "{{{package}}}"
+    },
+    {
+      "customType": "regex",
+      "managerFilePatterns": ["//Dockerfile$/"],
+      "matchStringsStrategy": "any",
+      "matchStrings": ["fah-client_(?<currentValue>.*?)_amd64\\.deb"],
+      "depNameTemplate": "fah-client",
+      "datasourceTemplate": "custom.fah-client",
+      "versioningTemplate": "semver"
     }
   ],
   "packageRules": [
     {
       "matchDatasources": ["deb"],
       "registryUrls": [
-        "https://deb.debian.org/debian?suite=trixie&components=main,contrib,non-free&binaryArch=amd64",
+        "https://deb.debian.org/debian?suite=trixie&components=main&binaryArch=amd64",
         "https://deb.debian.org/debian?suite=trixie-updates&components=main&binaryArch=amd64",
         "https://deb.debian.org/debian-security?suite=trixie-security&components=main&binaryArch=amd64"
       ],
@@ -40,12 +57,14 @@
     },
     {
       "groupName": "Add-on base image",
-      "matchDatasources": ["docker"]
+      "matchDatasources": ["docker"],
+      "matchDepNames": ["ghcr.io/hassio-addons/debian-base"]
     },
     {
       "groupName": "Add-on base image",
       "matchDatasources": ["docker"],
       "matchUpdateTypes": ["minor", "patch"],
+      "matchDepNames": ["ghcr.io/hassio-addons/debian-base"],
       "automerge": true
     }
   ]
