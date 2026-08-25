@@ -9,20 +9,21 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 ARG BUILD_ARCH=amd64
 RUN \
     curl -J -L -o /tmp/fah.deb \
-        "https://download.foldingathome.org/releases/public/fah-client/debian-10-64bit/release/fah-client_8.3.17_amd64.deb" \
+        "https://download.foldingathome.org/releases/public/fah-client/debian-10-64bit/release/fah-client_8.5.6_amd64.deb" \
     \
     && apt-get update \
     && apt-get install -y --no-install-recommends \
-        bzip2=1.0.8-5+b1 \
-        ocl-icd-libopencl1=2.3.1-1 \
+        adduser=3.152 \
+        bzip2=1.0.8-6 \
+        libexpat1=2.8.3-1~deb13u1 \
+        ocl-icd-libopencl1=2.3.3-1 \
+        procps=2:4.0.4-9 \
     \
     && addgroup --system render \
-    && mkdir /etc/fahclient \
-    && touch /etc/fahclient/config.xml \
     && dpkg --install /tmp/fah.deb \
     \
+    && apt-get clean \
     && rm -fr \
-        /etc/fahclient \
         /tmp/* \
         /var/{cache,log}/* \
         /var/lib/apt/lists/*
@@ -32,7 +33,10 @@ COPY rootfs /
 
 # Build arguments
 ARG BUILD_DATE
+ARG BUILD_DESCRIPTION
+ARG BUILD_NAME
 ARG BUILD_REF
+ARG BUILD_REPOSITORY
 ARG BUILD_VERSION
 
 # Labels
