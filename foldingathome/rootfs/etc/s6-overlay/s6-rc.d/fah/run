@@ -1,24 +1,31 @@
 #!/command/with-contenv bashio
 # shellcheck shell=bash
-# shellcheck disable=SC2191
 # ==============================================================================
 # Home Assistant Community Add-on: Folding@home
-# Runs the FAHClient
+# Runs the Folding@home client
 # ==============================================================================
 declare -a options
 
 bashio::log.info 'Starting Folding@home...'
 
 options+=(--http-addresses 0.0.0.0:7396)
-options+=(--command-address 0.0.0.0)
-options+=(--command-port 36330)
-options+=(--command-allow-no-pass 0/0)
 options+=(--allow 0/0)
-options+=(--web-allow 0/0)
-options+=(--smp=true)
-options+=(--user "Anonymous")
-options+=(--team 247478)
-options+=(--power full)
+options+=(--user "$(bashio::config 'user')")
+options+=(--team "$(bashio::config 'team')")
 
-cd /data || bashio::exit.nok "Failed to change to working directory"
-exec FAHClient "${options[@]}"
+if bashio::config.has_value 'passkey'; then
+    options+=(--passkey "$(bashio::config 'passkey')")
+fi
+
+# Linking an account is what makes this machine reachable from the Web Control
+# at https://app.foldingathome.org. Folding itself works without it.
+if bashio::config.has_value 'account_token'; then
+    options+=(--account-token "$(bashio::config 'account_token')")
+fi
+
+if bashio::config.has_value 'machine_name'; then
+    options+=(--machine-name "$(bashio::config 'machine_name')")
+fi
+
+cd /data || bashio::exit.nok 'Failed to change to working directory'
+exec fah-client "${options[@]}"
