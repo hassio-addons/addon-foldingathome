@@ -1,6 +1,3 @@
 ---
 build_from:
-  amd64: ghcr.io/hassio-addons/debian-base:7.8.3
-codenotary:
-  base_image: codenotary@frenck.dev
-  signer: codenotary@frenck.dev
+  amd64: ghcr.io/hassio-addons/debian-base:9.4.0
