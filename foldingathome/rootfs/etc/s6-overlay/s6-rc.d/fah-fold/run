@@ -1,0 +1,19 @@
+#!/command/with-contenv bashio
+# shellcheck shell=bash
+# ==============================================================================
+# Home Assistant Community Add-on: Folding@home
+# Tells the client to start folding
+# ==============================================================================
+
+# The v8 client brings its default resource group up paused and only ever
+# leaves that state on request. Without this, the add-on would install, start
+# and then quietly sit idle until someone pressed "Fold" in the Web Control,
+# which is not reachable at all unless an account has been linked.
+bashio::net.wait_for 7396 127.0.0.1 300
+
+if fahctl fold --address 127.0.0.1:7396; then
+    bashio::log.info 'Folding started'
+else
+    bashio::log.warning 'Could not tell the client to start folding'
+    bashio::log.warning 'Start it manually from the Folding@home Web Control'
+fi
