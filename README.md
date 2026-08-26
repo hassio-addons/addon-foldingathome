@@ -8,6 +8,10 @@
 ![Project Maintenance][maintenance-shield]
 [![GitHub Activity][commits-shield]][commits]
 
+[![Sponsor Frenck via GitHub Sponsors][github-sponsors-shield]][github-sponsors]
+
+[![Support Frenck on Patreon][patreon-shield]][patreon]
+
 Fighting disease with a world wide distributed super computer.
 
 ![Folding@home in the Home Assistant Frontend](images/screenshot.png)
@@ -104,10 +108,14 @@ SOFTWARE.
 [frenck]: https://github.com/frenck
 [github-actions-shield]: https://github.com/hassio-addons/app-foldingathome/workflows/CI/badge.svg
 [github-actions]: https://github.com/hassio-addons/app-foldingathome/actions
+[github-sponsors-shield]: https://frenck.dev/wp-content/uploads/2019/12/github_sponsor.png
+[github-sponsors]: https://github.com/sponsors/frenck
 [issue]: https://github.com/hassio-addons/app-foldingathome/issues
 [license-shield]: https://img.shields.io/github/license/hassio-addons/app-foldingathome.svg
 [maintenance-shield]: https://img.shields.io/maintenance/yes/2026.svg
-[project-stage-shield]: https://img.shields.io/badge/project%20stage-experimental-yellow.svg
+[patreon-shield]: https://frenck.dev/wp-content/uploads/2019/12/patreon.png
+[patreon]: https://www.patreon.com/frenck
+[project-stage-shield]: https://img.shields.io/badge/project%20stage-production%20ready-brightgreen.svg
 [reddit]: https://reddit.com/r/homeassistant
 [releases-shield]: https://img.shields.io/github/release/hassio-addons/app-foldingathome.svg
 [releases]: https://github.com/hassio-addons/app-foldingathome/releases
