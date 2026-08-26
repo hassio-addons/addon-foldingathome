@@ -126,6 +126,11 @@ the v8 client, so that is no longer possible.
 ## Known issues and limitations
 
 - This app only runs on 64-bits intel-based computers.
+- Folding runs on the CPU only. GPU folding needs an OpenCL driver for the
+  specific graphics card, and none of them are usable here: Home Assistant OS
+  ships no NVIDIA driver, Debian 13 no longer packages Intel's OpenCL runtime,
+  and the only remaining option would quadruple the size of this app to serve
+  AMD cards alone.
 - The Folding@home v8 client ships no local web interface, so the app has no
   Web UI. Monitoring and controlling it from a browser requires linking an
   account, see `account_token` above.

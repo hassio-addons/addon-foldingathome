@@ -6,6 +6,11 @@ FROM ${BUILD_FROM}
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 # Setup base system
+#
+# The render group is created because the client package's preinst runs
+# `useradd --groups video,render`, which fails without it and takes the
+# installation down with it. It is not there for GPU access; folding is CPU
+# only, see DOCS.md.
 ARG BUILD_ARCH=amd64
 RUN \
     curl -J -L -o /tmp/fah.deb \
@@ -15,7 +20,6 @@ RUN \
     && apt-get install -y --no-install-recommends \
         adduser=3.152 \
         libexpat1=2.8.3-1~deb13u1 \
-        ocl-icd-libopencl1=2.3.3-1 \
         procps=2:4.0.4-9 \
         python3=3.13.5-1 \
         python3-websocket=1.8.0-2 \

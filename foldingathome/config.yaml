@@ -8,7 +8,6 @@ arch:
   - amd64
 init: false
 hassio_api: true
-video: true
 ports:
   7396/tcp: null
 ports_description:
