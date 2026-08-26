@@ -24,3 +24,4 @@ schema:
   passkey: match(^[0-9a-fA-F]{32}$)?
   account_token: str?
   machine_name: str
+  cpus: int(1,)?
