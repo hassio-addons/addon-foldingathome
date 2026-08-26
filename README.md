@@ -10,8 +10,6 @@
 
 Fighting disease with a world wide distributed super computer.
 
-![Folding@home in the Home Assistant Frontend](images/screenshot.png)
-
 ## About
 
 Folding@home (FAH or F@h) is a distributed computing project for performing
