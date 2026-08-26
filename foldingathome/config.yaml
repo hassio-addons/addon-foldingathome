@@ -3,7 +3,7 @@ name: Folding@home
 version: dev
 slug: foldingathome
 description: Fighting disease with a world wide distributed super computer
-url: https://github.com/hassio-addons/addon-foldingathome
+url: https://github.com/hassio-addons/app-foldingathome
 arch:
   - amd64
 init: false

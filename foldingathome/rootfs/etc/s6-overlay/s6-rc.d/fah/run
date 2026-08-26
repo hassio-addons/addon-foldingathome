@@ -1,7 +1,7 @@
 #!/command/with-contenv bashio
 # shellcheck shell=bash
 # ==============================================================================
-# Home Assistant Community Add-on: Folding@home
+# Home Assistant Community App: Folding@home
 # Runs the Folding@home client
 # ==============================================================================
 declare -a options
