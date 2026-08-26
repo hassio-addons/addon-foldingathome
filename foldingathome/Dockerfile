@@ -14,7 +14,6 @@ RUN \
     && apt-get update \
     && apt-get install -y --no-install-recommends \
         adduser=3.152 \
-        bzip2=1.0.8-6 \
         libexpat1=2.8.3-1~deb13u1 \
         ocl-icd-libopencl1=2.3.3-1 \
         procps=2:4.0.4-9 \
